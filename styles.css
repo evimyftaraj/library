@@ -157,10 +157,6 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
-#book-title, #book-author, #book-pages {
-    font-weight: 700;
-}
-
 .remove-btn {
     display: flex;
     border: none;

@@ -17,6 +17,7 @@ addBtn.addEventListener('click', addBookRequest);
 overlay.addEventListener("click", function(event) {
     if (event.target === this) {
         closeForm();
+        clearFormFields();
     }
 });
 
@@ -62,6 +63,14 @@ function addBookToLibrary() {
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
     closeForm();
+    clearFormFields();
+}
+
+function clearFormFields() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#pages").value = "";
+    document.querySelector("#read").checked = false;
 }
 
 function render() {
@@ -77,9 +86,9 @@ function render() {
         bookEl.innerHTML = `
         <div id="card">
             <button class="remove-btn" onclick="removeBook(${i})">X</button>
-            <div id="book-title">Title: ${book.title}</div>
-            <div id="book-author">Author: ${book.author}</div>
-            <div id="book-pages">Pages: ${book.pages}</div>
+            <div id="book-title"><span style="font-weight: 600;">Title:</span> ${book.title}</div>
+            <div id="book-author"><span style="font-weight: 600;">Author:</span> ${book.author}</div>
+            <div id="book-pages"><span style="font-weight: 600;">Pages:</span> ${book.pages}</div>
             <button class="book-read ${book.read ? 'read' : 'not-read'}" onclick="toggleRead(${i})">${book.read ? "Read": "Not Read Yet"}</button>
         </div>`
         libraryEl.appendChild(bookEl);
