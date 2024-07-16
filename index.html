@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="library.js"></script>
+</head>
+<body>
+    <div id="body">
+        <div id="header">
+            <div id="header-left">
+                <h1>Your Library</h1>
+            </div>
+            <div id="header-right">
+                <button id="sign-in">SIGN IN</button>
+            </div>
+        </div>
+        <div id="main">
+            <div id="overlay"></div>
+            <button id="add-book">+ Add Book</button>
+
+            <div id="library-counter">
+                <div id="books-read">Total Books: </div>
+                <div id="pages-read">Total Pages: </div>
+            </div>
+
+            <div id="library"></div>
+        
+            <div id="bookForm">
+                <h2>Fill out the form to add a book</h2>
+                <form id="newBookForm">
+                    <div id="formQ">
+                        <input type="text" id="title" name="title" placeholder="Title:" required>
+                    </div>
+                    <div id="formQ">
+                        <input type="text" id="author" name="author" placeholder="Author:" required>
+                    </div>
+                    <div id="formQ">
+                        <input type="number" id="pages" name="pages" placeholder="Pages:" required>
+                    </div>
+                    <div id="formO">
+                        <label for="read">Have you read it?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+
+                    <button id="submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
