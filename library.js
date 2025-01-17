@@ -118,3 +118,14 @@ function closeForm() {
     }); 
 }
 
+// validation
+pages.addEventListener('input', (event) => {
+    if (!pages.value.trim()) {
+        pages.setCustomValidity("This field cannot be empty!");
+    } else if (isNaN(pages.value) || parseInt(pages.value, 10) <= 0) {
+        pages.setCustomValidity("Please enter a valid number greater than 0!");
+    } else {
+        pages.setCustomValidity("");
+    }
+    pages.reportValidity();
+});
